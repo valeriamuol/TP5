@@ -100,14 +100,14 @@ public class frmAgregarCiudad extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtCiudadActionPerformed
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
-        
+
         String ciudad = jtCiudad.getText();
         frmMenuPrincipal.ciudades.add(ciudad);
         jtCiudad.setText("");
     }//GEN-LAST:event_jbGuardarActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
-        
+
         this.dispose();
     }//GEN-LAST:event_jbSalirActionPerformed
 

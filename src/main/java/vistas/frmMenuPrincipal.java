@@ -6,21 +6,20 @@ import java.util.TreeSet;
 
 
 public class frmMenuPrincipal extends javax.swing.JFrame {
+
     public static DirectorioTelefonico directorio = new DirectorioTelefonico();
     public static TreeSet<String> ciudades = new TreeSet<>();
 
     public static DirectorioTelefonico getDirectorio() {
         return directorio;
     }
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmMenuPrincipal.class.getName());
 
-    
     public frmMenuPrincipal() {
         initComponents();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -163,7 +162,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private void jmBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmBorrarActionPerformed
         escritorio.removeAll();
         escritorio.repaint();
-        frmBorrar b = new frmBorrar ();
+        frmBorrar b = new frmBorrar();
         b.setVisible(true);
         escritorio.add(b);
         escritorio.moveToFront(b);
@@ -180,7 +179,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmAgregarClienteActionPerformed
 
     private void jmCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmCiudadActionPerformed
-        
+
     }//GEN-LAST:event_jmCiudadActionPerformed
 
     private void jmagregarciudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmagregarciudadActionPerformed
@@ -206,7 +205,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-       escritorio.removeAll();
+        escritorio.removeAll();
         escritorio.repaint();
         frm_BuscarTelefonoPorApellido bta = new frm_BuscarTelefonoPorApellido();
         bta.setVisible(true);
@@ -253,10 +252,11 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmagregarciudad;
     // End of variables declaration//GEN-END:variables
 
-public static void agregarCiudad(String ciudad) {
+    public static void agregarCiudad(String ciudad) {
         ciudades.add(ciudad);
     }
-public static TreeSet<String> getCiudades() {
+
+    public static TreeSet<String> getCiudades() {
         return ciudades;
     }
 }
