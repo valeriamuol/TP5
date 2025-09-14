@@ -117,8 +117,8 @@ public class frmBuscar extends javax.swing.JInternalFrame {
                                 .addComponent(jtDni)
                                 .addComponent(jtNombre)
                                 .addComponent(jtApellido)
-                                .addComponent(jtCiudad)
-                                .addComponent(jtDomicilio, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)))))
+                                .addComponent(jtDomicilio)
+                                .addComponent(jtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -148,11 +148,11 @@ public class frmBuscar extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addComponent(jbSalir)
                         .addGap(22, 22, 22))))
@@ -167,9 +167,9 @@ public class frmBuscar extends javax.swing.JInternalFrame {
 
     private void jlTelefonosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jlTelefonosValueChanged
       
-        Long telefonoSeleccionado = jlTelefonos.getSelectedValue();
-        if (telefonoSeleccionado != null) {
-            mostrarContacto(telefonoSeleccionado);
+        Long telefono = jlTelefonos.getSelectedValue();
+        if (telefono != null) {
+            mostrarContacto(telefono);
         }
     
     }//GEN-LAST:event_jlTelefonosValueChanged
@@ -208,17 +208,6 @@ public class frmBuscar extends javax.swing.JInternalFrame {
         }
     }
 
-    private void telefonoSeleccionado(Long telefono) {
-        Contacto c = frmMenuPrincipal.getDirectorio().buscarContacto(telefono);
-        if (c != null) {
-            jtDni.setText(String.valueOf(c.getDni()));
-            jtNombre.setText(c.getNombre());
-            jtApellido.setText(c.getApellido());
-            jtCiudad.setText(c.getCiudad());
-            jtDomicilio.setText(c.getDireccion());
-            jtTelefono.setText(String.valueOf(telefono));
-        }
-    }
  
 
     private void mostrarContacto(Long telefono) {

@@ -169,11 +169,11 @@ public class frmAgregarCliente extends javax.swing.JInternalFrame {
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         
         try {
-        int dni = Integer.parseInt(jtDni.getText());
+        Long dni = Long.parseLong(jtDni.getText());
         String nombre = jtNombre.getText();
         String apellido = jtApellido.getText();
-        String domicilio = jtDomicilio.getText();
         String ciudad = cbCiudad.getSelectedItem().toString();
+        String domicilio = jtDomicilio.getText();
         Long telefono = Long.parseLong(jtTelefono.getText());
         Contacto contacto = new Contacto(dni, nombre, apellido, domicilio, ciudad);
         

@@ -86,11 +86,26 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Directorio");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
 
         jMenuItem5.setText("Buscar Cliente por Ciudad");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuItem6.setText("Buscar Teléfono por Apellido");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem6);
 
         jMenuBar1.add(jMenu2);
@@ -176,6 +191,28 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         escritorio.add(agc);
         escritorio.moveToFront(agc);
     }//GEN-LAST:event_jmagregarciudadActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        frmBuscarClienteCiudad bcc = new frmBuscarClienteCiudad();
+        bcc.setVisible(true);
+        escritorio.add(bcc);
+        escritorio.moveToFront(bcc);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+       escritorio.removeAll();
+        escritorio.repaint();
+        frm_BuscarTelefonoPorApellido bta = new frm_BuscarTelefonoPorApellido();
+        bta.setVisible(true);
+        escritorio.add(bta);
+        escritorio.moveToFront(bta);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     
     public static void main(String args[]) {

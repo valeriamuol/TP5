@@ -53,8 +53,8 @@
                               <Component id="jtDni" max="32767" attributes="0"/>
                               <Component id="jtNombre" max="32767" attributes="0"/>
                               <Component id="jtApellido" max="32767" attributes="0"/>
-                              <Component id="jtCiudad" max="32767" attributes="0"/>
-                              <Component id="jtDomicilio" pref="161" max="32767" attributes="0"/>
+                              <Component id="jtDomicilio" max="32767" attributes="0"/>
+                              <Component id="jtCiudad" min="-2" pref="161" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -94,12 +94,12 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtCiudad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtDomicilio" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtDomicilio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtCiudad" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="26" max="32767" attributes="0"/>
                       <Component id="jbSalir" min="-2" max="-2" attributes="0"/>

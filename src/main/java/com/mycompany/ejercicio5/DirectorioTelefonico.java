@@ -17,9 +17,11 @@ import java.util.TreeMap;
  */
 public class DirectorioTelefonico {
     public static TreeMap <Long,Contacto> agenda = new TreeMap<>();
-    
-    
-    
+
+    public static TreeMap<Long, Contacto> getAgenda() {
+        return agenda;
+    }
+ 
     public boolean agregarContacto(Long telefono, Contacto contacto){
         if(agenda.containsKey(telefono)){
             return false;
@@ -66,7 +68,7 @@ public class DirectorioTelefonico {
                 listaContactos.add(c);
             }
         }
-        System.out.println(listaContactos);
+        
         return listaContactos;
     }
     
@@ -76,5 +78,44 @@ public class DirectorioTelefonico {
         }
     }
     
+    public Contacto buscarPorDni(Long dni) {
+    for (Contacto c : agenda.values()) {
+        if (c.getDni() == dni) {
+            return c;
+        }
+    }
+    return null;
+}
+
+public Long buscarTelefonoPorDni(Long dni) {
+    for (Map.Entry<Long, Contacto> entry : agenda.entrySet()) {
+        if (entry.getValue().getDni() == dni) {
+            return entry.getKey();
+        }
+    }
+    return null;
+}
     
+public void eliminarContacto(Long telefono) {
+    agenda.remove(telefono);
+}
+
+public Contacto buscarPorApellido(String ap) {
+    for (Contacto c : agenda.values()) {
+        if (c.getApellido() == ap) {
+            return c;
+        }
+    }
+    return null;
+}
+
+public Long buscarTelefonoPorApellido(String ap) {
+    for (Map.Entry<Long, Contacto> entry : agenda.entrySet()) {
+        if (entry.getValue().getApellido() == ap) {
+            return entry.getKey();
+        }
+    }
+    return null;
+}
+
 }

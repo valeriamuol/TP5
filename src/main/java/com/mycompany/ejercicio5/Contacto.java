@@ -9,13 +9,13 @@ package com.mycompany.ejercicio5;
  * @author valer
  */
 public class Contacto {
-    private int dni;
+    private Long dni;
     private String nombre;
     private String apellido;
     private String ciudad;
     private String direccion;
 
-    public Contacto(int dni, String nombre, String apellido, String ciudad, String direccion) {
+    public Contacto(Long dni, String nombre, String apellido, String ciudad, String direccion) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -23,13 +23,14 @@ public class Contacto {
         this.direccion = direccion;
     }
 
-    public int getDni() {
+    public Long getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(Long dni) {
         this.dni = dni;
     }
+
 
     public String getNombre() {
         return nombre;
