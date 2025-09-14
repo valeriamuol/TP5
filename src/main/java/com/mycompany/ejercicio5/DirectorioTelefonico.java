@@ -97,7 +97,6 @@ public Long buscarTelefonoPorDni(Long dni) {
 }
     
 
-
 public Contacto buscarPorApellido(String ap) {
     for (Contacto c : agenda.values()) {
         if (c.getApellido() == ap) {

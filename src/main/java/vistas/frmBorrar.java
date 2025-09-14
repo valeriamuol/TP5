@@ -15,10 +15,10 @@ public class frmBorrar extends javax.swing.JInternalFrame {
 
     public frmBorrar() {
         initComponents();
-        armarCabecera();
-        jListDNI.setModel(listaDeDNI);
-        llenarListaDNI();
-
+    armarCabecera();  
+    jListDNI.setModel(listaDeDNI); 
+    llenarListaDNI(); 
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -131,35 +131,36 @@ public class frmBorrar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbSalirActionPerformed
 
     private void jListDNIValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jListDNIValueChanged
-
-        Long dni = jListDNI.getSelectedValue();
+        
+        Long dni = jListDNI.getSelectedValue(); 
 
         if (dni != null) {
+            jtDni.setText(String.valueOf(dni));
             Contacto c = frmMenuPrincipal.getDirectorio().buscarPorDni(dni);
 
             if (c != null) {
                 Long telefono = frmMenuPrincipal.getDirectorio().buscarTelefonoPorDni(dni);
                 cargarContactoEnTabla(c, telefono);
             }
-
-        }
+        
+    }
     }//GEN-LAST:event_jListDNIValueChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Long dni = jListDNI.getSelectedValue();
 
-       
-        Long telefono = frmMenuPrincipal.getDirectorio().buscarTelefonoPorDni(dni);
+    if (dni != null) {
+            Long telefono = frmMenuPrincipal.getDirectorio().buscarTelefonoPorDni(dni);
 
+        if (telefono != null) {
             
+            frmMenuPrincipal.getDirectorio().borrarContacto(telefono);
 
-                frmMenuPrincipal.getDirectorio().borrarContacto(telefono);
-
-                llenarListaDNI();
-
-                modelo.setRowCount(0);
-            
-        
+            llenarListaDNI();
+            jtDni.setText("");
+            modelo.setRowCount(0);
+        }
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -176,38 +177,38 @@ public class frmBorrar extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     
-    private void armarCabecera() {
-        modelo.addColumn("DNI");
-        modelo.addColumn("Apellido");
-        modelo.addColumn("Nombre");
-        modelo.addColumn("Direccion");
-        modelo.addColumn("Ciudad");
-        modelo.addColumn("Teléfono");
-        jtClientes.setModel(modelo);
-    }
+private void armarCabecera(){
+    modelo.addColumn("DNI");
+    modelo.addColumn("Apellido");
+    modelo.addColumn("Nombre");
+    modelo.addColumn("Direccion");
+    modelo.addColumn("Ciudad");
+    modelo.addColumn("Teléfono");
+    jtClientes.setModel(modelo);
+}
 
-    private void cargarContactoEnTabla(Contacto c, Long telefono) {
-        modelo.setRowCount(0);
+private void cargarContactoEnTabla(Contacto c, Long telefono) {
+    modelo.setRowCount(0);
 
-        Object[] fila = {
-            c.getDni(),
-            c.getNombre(),
-            c.getApellido(),
-            c.getCiudad(),
-            c.getDireccion(),
-            telefono
-        };
+    Object[] fila = {
+        c.getDni(),
+        c.getNombre(),
+        c.getApellido(),
+        c.getCiudad(),
+        c.getDireccion(),
+        telefono
+    };
 
-        modelo.addRow(fila);
-    }
+    modelo.addRow(fila);
+}
 
-    private void llenarListaDNI() {
+     private void llenarListaDNI() {
         listaDeDNI.clear();
-
-        Collection<Contacto> contactos = frmMenuPrincipal.getDirectorio().agenda.values();
-
-        for (Contacto c : contactos) {
-            listaDeDNI.addElement(c.getDni());
-        }
+    
+    Collection<Contacto> contactos = frmMenuPrincipal.getDirectorio().agenda.values();
+    
+    for (Contacto c : contactos) {
+        listaDeDNI.addElement(c.getDni()); 
     }
+     }
 }
