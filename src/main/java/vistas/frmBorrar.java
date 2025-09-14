@@ -146,20 +146,17 @@ public class frmBorrar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jListDNIValueChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Long dniSeleccionado = jListDNI.getSelectedValue();
+        Long dni = jListDNI.getSelectedValue();
 
-        if (dniSeleccionado != null) {
-            Long telefono = frmMenuPrincipal.getDirectorio().buscarTelefonoPorDni(dniSeleccionado);
+        Long telefono = frmMenuPrincipal.getDirectorio().buscarTelefonoPorDni(dni);
 
-            if (telefono != null) {
+        frmMenuPrincipal.getDirectorio().borrarContacto(telefono);
 
-                frmMenuPrincipal.getDirectorio().eliminarContacto(telefono);
+        llenarListaDNI();
 
-                llenarListaDNI();
-
-                modelo.setRowCount(0);
-            }
-        }
+        modelo.setRowCount(0);
+            
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

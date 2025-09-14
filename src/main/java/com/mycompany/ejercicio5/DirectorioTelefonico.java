@@ -96,9 +96,7 @@ public Long buscarTelefonoPorDni(Long dni) {
     return null;
 }
     
-public void eliminarContacto(Long telefono) {
-    agenda.remove(telefono);
-}
+
 
 public Contacto buscarPorApellido(String ap) {
     for (Contacto c : agenda.values()) {
